@@ -4,7 +4,7 @@
   <img src="picture/trademark.jpg" alt="描述文本" width="200" height="200">
 </div>
 
-[Telegram Auto Switch DNS Bot](https://github.com/reppoor/telegram-bot-ddns)
+[Telegram Auto Switch DNS Bot](https://github.com/reppoor/telegram-auto-switch-dns-bot)
 
 [telegram频道 t.me/ddns_reppoor](https://t.me/ddns_reppoor)
 
