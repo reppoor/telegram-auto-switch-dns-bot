@@ -1,0 +1,28 @@
+[Unit]
+Description=Telegram Auto Switch DNS Bot
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+
+
+# 🔴 工作目录，建议和二进制同目录
+WorkingDirectory=/etc/telegram-auto-switch-dns-bot
+
+# 🔴 直接指向你的二进制文件
+ExecStart=/etc/telegram-auto-switch-dns-bot/telegram-auto-switch-dns-bot-linux-amd64
+
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+# Resource limits
+LimitNOFILE=65536
+LimitNPROC=4096
+
+[Install]
+WantedBy=multi-user.target

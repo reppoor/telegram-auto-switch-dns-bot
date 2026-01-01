@@ -51,11 +51,11 @@
 
 1. 前往 [Cloudflare API](https://dash.cloudflare.com/profile/api-tokens) 创建 Cloudflare API令牌，并给于DNS区域读写权限
 2. [下载](https://github.com/reppoor/telegram-auto-switch-dns-bot/blob/master/conf.yaml) 配置 `conf.yaml` 文件，并将其放到与二进制文件的同目录下
-3. [下载](https://github.com/reppoor/telegram-auto-switch-dns-bot/releases) 下载二进制文件
+3. [下载](https://github.com/reppoor/telegram-auto-switch-dns-bot/releases) 下载二进制文件，并给予最高权限 `chmod 777 二进制文件名`
 4. 运行程序 `./二进制文件名`
 5. 通过 Telegram 机器人进行管理
 6. 二进制文件需要通过
-7. 如需后台运行请使用`systemd` 如果您的 Linux 服务器上尚未安装 systemd，可以使用包管理器`apt`来安装它`apt install systemd`
+7. [systemd文件参考](https://github.com/reppoor/telegram-auto-switch-dns-bot/blob/master/telegram-auto-switch-dns-bot.service)如需后台运行请使用`systemd` 如果您的 Linux 服务器上尚未安装 systemd，可以使用包管理器`apt`来安装它`apt install systemd`
 
 
 ## 捐赠
