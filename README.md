@@ -62,7 +62,7 @@
 
 #### 如果您觉得这个项目对您有帮助，欢迎进行捐赠：
 
-USDT (TRC20): ``
+USDT (TRC20): `TXb4tujqSZ6qRhYNgNjNxnREdpR45GnaR6`
 
 
 ## 项目目录结构
@@ -110,4 +110,4 @@ USDT (TRC20): ``
 ```
 
 # Stargazers over time
-[![Stargazers over time](https://starchart.cc/reppoor/telegram-bot-ddns.svg?variant=adaptive)](https://github.com/reppoor/telegram-auto-switch-dns-bot)
+[![Stargazers over time](https://starchart.cc/reppoor/telegram-auto-switch-dns-bot.svg?variant=adaptive)](https://github.com/reppoor/telegram-auto-switch-dns-bot)
