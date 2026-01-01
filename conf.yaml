@@ -1,0 +1,58 @@
+# 配置文件需要遵循YAML语法
+logger:
+  level: "info" # debug info warn error 日记的层级
+  development: false # 是否开发模式记录日记
+  file_path: "logs/app.log" # 日记保存路径，请不要乱改变
+  keep_days: 3            # 日志保留天数，超过即删除
+
+#启动模式
+start:
+  models: 3 # 1表示只启动bot,2表示只启动检测端,3表示前后端不分离
+
+# 后端检测url，让前端知道该向哪个后端发送检测请求
+backend_url :
+  api: "http://127.0.0.1:8080" # 配置前端bot提交检测的后端url，如果只启动后端，这里可以忽略
+  timeout : 30s #连接后端响应时间，建议超过30秒，否则会一直调用接口失败！！！
+
+# 自动检测间隔时间配置
+auto_check :
+  check_time : 5 # 自动检测间隔，单位分钟
+  api_fail : 5 # 调用API失败阈值，建议调高
+
+# 数据库配置
+database:
+  type: 1 # 1=sqlite,2=mysql可选mysql和sqlite,如果选mysql就需要填用户名和密码等配置
+  file: "./database.db" #sqlite的文件路径，请不要更改路径
+  user: "" # 数据库用户名
+  password: "" # 数据库密码
+  host: "" # 数据库主机
+  port: "3306" # 数据库端口
+  name: "" # 数据库名称
+  charset: "utf8mb4" # 字符集
+
+# telegram的基本信息
+telegram:
+  id :  111111 #telegram用户ID
+  token : "" # telegram机器人Token找@BotFather创建
+  apiEndpoint: "https://api.telegram.org"                  #telegramAPI 可以反代，如果不知道在做什么，请不要更改
+  key : "" #与检测后端的通信密钥，请与检测端保持一致
+
+# cloudflare配置
+cloudflare:
+  api_token: ""  # cloudflare的key，需要自己去创建
+  ttl : 60 # 60秒等于1分钟
+
+# 仅用于telegram代理，适用于无法连接telegram的部署前端bot
+network:
+  enabled: false # 开启:true,关闭:false。开启后一定要保证代理语法正确，否则程序报错。如果使用反代API，请关闭代理
+  proxy: "http://127.0.0.1:7890" #配置telegram代理，支持http和socks5。示例语法 socks5://127.0.0.1:7890
+
+# 配置检测端API，如果只启动前端bot，这里可以忽略
+backend_listen:
+  host: 0.0.0.0       # 后端监听地址
+  port: 8080          # 后端 WebSocket 服务端口
+  key: ""             # 后端通信密钥，重要不用泄露！！不然谁都能用你的机器，请脸滚键盘
+  read_timeout : 30s # 后端检测服务器读取数据的最长时间，请不要乱修改！！！
+  write_timeout : 30s # 后端服务器写入数据的最长时间，请不要乱修改！！！
+  max_retries: 3      # 最大重试次数
+  max_header_bytes : 1048576 # 限制传入的字节大小 单位Byte
