@@ -40,10 +40,8 @@ func CheckApi() {
 	utils.Logger.Infof("检测后端启动")
 	r := gin.Default()
 	gin.SetMode(gin.ReleaseMode)
-
 	r.POST("/api/v1/tcp_checks", tcpCheckHandler)
 	r.POST("/api/v1/resolve_ip", resolveIPHandler) // 新增：只解析 IP 的接口
-
 	srv := &http.Server{
 		Addr:           ":" + config.Global.BackendListen.Port,
 		Handler:        r,
