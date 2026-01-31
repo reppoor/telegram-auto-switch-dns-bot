@@ -16,7 +16,7 @@ backend_url :
 
 # 自动检测间隔时间配置
 auto_check :
-  check_time : 5 # 自动检测间隔，单位分钟
+  check_time : 6 # 自动检测间隔，单位分钟
   api_fail : 5 # 调用API失败阈值，建议调高
 
 # 数据库配置
